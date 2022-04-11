@@ -10,8 +10,33 @@ Python3 должен быть уже установлен.
 ```
 pip install -r requirements.txt
 ```
-Ключи и учетные данные для подключения к базе данных хранятся в .env
+### Как запустить
 
+Для запуска нужно прописать настройки в файле `.env`
+
+Пример `.env`
+
+```
+DEBUG=False
+SECRET_KEY='секретный ключ'
+DATABASE_URL='postgres://логин:пароль@адрес_хоста:порт/имя'
+ALLOWED_HOSTS=ваши адреса сайтов '127.0.0.1'
+
+DEBUG=False
+SECRET_KEY='секретный ключ'
+DB_USER='login'
+DB_PASSWORD='password'
+DB_HOST='host'
+DB_PORT='port'
+DB_NAME='name'
+DB_ENGINE=django.db.backends.postgresql_psycopg2
+```
+Затем используйте
+
+```
+python manage.py runserver
+```
+Запустится локальный сервер, сайт будет доступен по адресу: `http://127.0.0.1:8000/`
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
